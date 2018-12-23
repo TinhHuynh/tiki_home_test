@@ -15,6 +15,6 @@ Project is created with:
 * [RxAndroid 2.1.0](https://github.com/ReactiveX/RxAndroid): RxJava bindings for Android
 
 ## Setup
-To run this project, clone it to your computer, open it with Android Studio and click Run button ![](https://developer.android.com/studio/images/buttons/toolbar-run.png) or hit **shift+F10**.
-The apk will be installed on connected emulator or a connected Android phone.
+To run this project, clone it to your computer, open it with Android Studio and click Run button ![](https://developer.android.com/studio/images/buttons/toolbar-run.png) or hit **shift+F10**.<br />
+The apk will be installed on connected emulator or a connected Android phone.<br />
 **IMPORTANT**: make sure that your emulator or device's Android version is 5.0 or above.
