@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="spacing_keyword_item">8dp</dimen>
+    <dimen name="size_default_keyword_item">50dp</dimen>
+    <dimen name="corner_radius_default">4dp</dimen>
+    <dimen name="margin_keyword_item">8dp</dimen>
+</resources>
