@@ -7,12 +7,6 @@ import java.util.*
 
 class ColorUtils {
     companion object {
-        fun random(): Int {
-            val rnd = Random()
-            val color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
-            return color
-        }
-
         // random Material Design color
         fun randomMatColor(context: Context, typeColor: String): Int {
             var returnColor = Color.BLACK

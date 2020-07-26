@@ -4,4 +4,9 @@
     <dimen name="size_default_keyword_item">50dp</dimen>
     <dimen name="corner_radius_default">4dp</dimen>
     <dimen name="margin_keyword_item">8dp</dimen>
+    <dimen name="margin_keyword_item_half">4dp</dimen>
+    <dimen name="margin_keyword_text">12dp</dimen>
+    <dimen name="spacing_16">16dp</dimen>
+    <dimen name="spacing_32">32dp</dimen>
+    <dimen name="spacing_12">12dp</dimen>
 </resources>
