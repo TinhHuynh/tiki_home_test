@@ -43,7 +43,6 @@ class KeywordHelper {
 
     private fun findLineBreakIndex(): Int {
         val length = keyword.length
-        println("$keyword length: $length")
         val midPosition = length / 2
         if (length % 2 == 0) {
             for (i in midPosition until length) {
@@ -64,8 +63,6 @@ class KeywordHelper {
                 }
             }
         }
-        println("$keyword prev distance: $distanceToPreviousBlankChar / next distance: $distanceToNextBlankChar")
-        println("$keyword prev index: $previousBlankCharIndex / next index: $nextBlankCharIndex")
         return if (min(distanceToPreviousBlankChar, distanceToNextBlankChar) ==
                 distanceToPreviousBlankChar) previousBlankCharIndex else nextBlankCharIndex
     }
