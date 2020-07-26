@@ -1,18 +1,19 @@
 package com.tinhhuynh.home_test.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.tinhhuynh.home_test.Constants
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.tinhhuynh.home_test.R
+import com.tinhhuynh.home_test.data.Product
+import com.tinhhuynh.home_test.data.ProductDisplayObject
 import com.tinhhuynh.home_test.data.network.tiki.TikiService
-import com.tinhhuynh.home_test.ui.KeywordDisplayObject
-import com.tinhhuynh.home_test.utils.ColorUtils
+import com.tinhhuynh.home_test.utils.ProductHelper
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
-import com.tinhhuynh.home_test.utils.KeywordHelper
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,8 +23,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private var disposable: Disposable? = null
-    private lateinit var keywordAdapter: KeywordAdapter
-    private lateinit var keywordHelper: KeywordHelper
+    private lateinit var productAdapter: ProductAdapter
+    private lateinit var productHelper: ProductHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,31 +39,33 @@ class MainActivity : AppCompatActivity() {
 
     // initialize resources
     private fun init() {
-        keywordHelper = KeywordHelper()
+        productHelper = ProductHelper()
         initRecyclerView()
         fetchKeywords()
     }
 
     private fun initRecyclerView() {
-        keywordAdapter = KeywordAdapter(this)
-        rv_keywords.adapter = keywordAdapter
+        productAdapter = ProductAdapter(this)
+        rv_products.adapter = productAdapter
+        val dividerItemDecoration = DividerItemDecoration(rv_products.context,
+                ( rv_products.layoutManager as LinearLayoutManager).orientation)
+        rv_products.addItemDecoration(dividerItemDecoration)
     }
 
     private fun fetchKeywords() {
         disposable =
-                tikiService.fetchKeywords()
+                tikiService.fetchProducts()
                         .subscribeOn(Schedulers.io())
                         .observeOn(Schedulers.computation())
                         .map {
-                            it.map { keyword ->
-                                convertToKeywordDisplayObject(keyword)
+                            it.map { product ->
+                                convertToProductDisplayObject(product)
                             }
                         }
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(
-                                { result -> displayKeywords(result) },
+                                { result -> displayProducts(result) },
                                 { error ->
-                                    error.printStackTrace()
                                     Toast.makeText(this,
                                             "There is an error occurs. Please try again!.",
                                             Toast.LENGTH_LONG).show()
@@ -70,15 +73,13 @@ class MainActivity : AppCompatActivity() {
                         )
     }
 
-    private fun convertToKeywordDisplayObject(keyword: String): KeywordDisplayObject {
-        val newKeyword = keywordHelper.breakNewLine(keyword)
-        val bgColor = ColorUtils.randomMatColor(this, Constants.BG_COLOR_TYPE)
-        return KeywordDisplayObject(newKeyword, bgColor)
+    private fun convertToProductDisplayObject(product: Product): ProductDisplayObject {
+        return productHelper.convertToDisplayObject(product)
     }
 
-    private fun displayKeywords(result: List<KeywordDisplayObject>?) {
+    private fun displayProducts(result: List<ProductDisplayObject>?) {
         result?.apply {
-            keywordAdapter.keywords = this
+            productAdapter.product = this
         }
     }
 

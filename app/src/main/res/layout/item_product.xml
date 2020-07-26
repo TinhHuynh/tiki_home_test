@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/spacing_16"
+    android:paddingBottom="@dimen/spacing_16">
+
+    <ImageView
+        android:id="@+id/img_thumbnail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.4"
+        tools:src="@color/colorAccent" />
+
+    <ImageView
+        android:id="@+id/img_tiki_now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_16"
+        android:src="@drawable/ic_tiki_now"
+        app:layout_constraintStart_toEndOf="@id/img_thumbnail"
+        app:layout_constraintTop_toTopOf="@id/img_thumbnail"
+        tools:visibility="visible" />
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_8"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="4"
+        android:stepSize="0.1"
+        android:theme="@style/RatingBar"
+        app:layout_constraintEnd_toEndOf="@id/txt_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/txt_name"
+        app:layout_constraintTop_toBottomOf="@id/txt_color_option" />
+
+    <TextView
+        android:id="@+id/txt_discount_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_8"
+        android:textColor="@color/color_black_text"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBaseline_toBaselineOf="@id/txt_price"
+        app:layout_constraintEnd_toEndOf="@id/txt_name"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/txt_price"
+        app:layout_constraintTop_toBottomOf="@id/txt_name"
+        tools:text="-100%" />
+
+    <TextView
+        android:id="@+id/txt_fast_delivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_4"
+        android:drawableStart="@drawable/ic_fast_delivery_12dp"
+        android:drawablePadding="@dimen/spacing_2"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/color_green"
+        android:textSize="@dimen/text_size_small"
+        app:drawableTint="@color/color_green"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="@id/txt_name"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/txt_name"
+        app:layout_constraintTop_toBottomOf="@id/txt_price"
+        tools:text=" Giao nhanh 2h"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/txt_color_option"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_8"
+        android:background="@drawable/rounded_corner"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingStart="@dimen/spacing_4"
+        android:paddingTop="@dimen/spacing_4"
+        android:paddingEnd="@dimen/spacing_4"
+        android:paddingBottom="@dimen/spacing_4"
+        android:text="@string/text_color_option"
+        android:textColor="@color/color_black_text"
+        android:textSize="@dimen/text_size_caption"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="@id/txt_name"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/txt_name"
+        app:layout_constraintTop_toBottomOf="@id/txt_fast_delivery" />
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_16"
+        android:layout_marginTop="@dimen/spacing_8"
+        android:layout_marginEnd="@dimen/spacing_24"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/color_black_text"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/img_thumbnail"
+        app:layout_constraintTop_toBottomOf="@id/img_tiki_now"
+        tools:text="Điện Thoại Nokia 105 Single Sim (2017) - Hàng Chính Hãng" />
+
+    <TextView
+        android:id="@+id/txt_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_4"
+        android:textColor="@color/color_black_text"
+        android:textSize="@dimen/text_size_medium"
+        android:textStyle="bold"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@id/txt_discount_rate"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/txt_name"
+        app:layout_constraintTop_toBottomOf="@id/txt_name"
+        tools:text="1.129.000 đ" />
+
+    <TextView
+        android:id="@+id/txt_review_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_4"
+        android:textColor="@color/color_grey_text"
+        android:textSize="@dimen/text_size_caption"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toBottomOf="@id/rating_bar"
+        app:layout_constraintEnd_toEndOf="@id/txt_name"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/rating_bar"
+        app:layout_constraintTop_toTopOf="@id/rating_bar"
+        tools:text="(65)" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="rating_bar,txt_review_count" />
+    x
+</androidx.constraintlayout.widget.ConstraintLayout>
