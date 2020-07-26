@@ -1,6 +1,7 @@
 package com.tinhhuynh.home_test.data.network.tiki
 
 import com.tinhhuynh.home_test.Constants
+import com.tinhhuynh.home_test.data.Product
 import io.reactivex.Observable
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -9,8 +10,8 @@ import retrofit2.http.GET
 
 interface TikiService {
 
-    @GET("keywords.json")
-    fun fetchKeywords(): Observable<List<String>>
+    @GET("products.json")
+    fun fetchProducts(): Observable<List<Product>>
 
     companion object {
         fun create(): TikiService {

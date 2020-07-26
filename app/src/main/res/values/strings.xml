@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">home_test</string>
     <string name="label_keywords">Hot keywords</string>
+    <string name="text_color_option">Nhiều màu</string>
 </resources>
