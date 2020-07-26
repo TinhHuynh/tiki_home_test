@@ -1,8 +1,8 @@
 package com.tinhhuynh.home_test.ui.main
 
 import android.content.Context
-import android.support.v7.widget.CardView
-import android.support.v7.widget.RecyclerView
+import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +11,7 @@ import com.tinhhuynh.home_test.ui.KeywordDisplayObject
 import kotlinx.android.synthetic.main.item_keywords.view.*
 
 class KeywordAdapter(private val context: Context)
-    : RecyclerView.Adapter<KeywordViewHolder>() {
+    : androidx.recyclerview.widget.RecyclerView.Adapter<KeywordViewHolder>() {
     var keywords: List<KeywordDisplayObject> = mutableListOf()
         set(value) {
             field = value
@@ -30,7 +30,7 @@ class KeywordAdapter(private val context: Context)
 
 }
 
-class KeywordViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+class KeywordViewHolder(private val view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
     private val textKeyword = view.text_keyword
 
     fun bind(keywordDisplayObject: KeywordDisplayObject) {

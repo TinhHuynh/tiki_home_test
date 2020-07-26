@@ -1,6 +1,6 @@
 package com.tinhhuynh.home_test.ui.main
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.tinhhuynh.home_test.Constants

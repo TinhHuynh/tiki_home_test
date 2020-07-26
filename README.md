@@ -10,9 +10,9 @@ Simple app for Tiki's Home Test created with Kotlin, Retrofit and RxAndroid. See
 
 ## Technologies
 Project is created with:
-* [Kotlin 1.2.61](https://github.com/JetBrains/kotlin): Kotlin Programming Language
-* [Retrofit 2.5.0](https://github.com/square/retrofit): Type-safe HTTP client for Android and Java by Square, Inc
-* [RxAndroid 2.1.0](https://github.com/ReactiveX/RxAndroid): RxJava bindings for Android
+* [Kotlin 1.3.72](https://github.com/JetBrains/kotlin): Kotlin Programming Language
+* [Retrofit 2.6.0](https://github.com/square/retrofit): Type-safe HTTP client for Android and Java by Square, Inc
+* [RxAndroid 2.1.1](https://github.com/ReactiveX/RxAndroid): RxJava bindings for Android
 
 ## Setup
 To run this project, clone it to your computer, open it with Android Studio and click Run button ![](https://developer.android.com/studio/images/buttons/toolbar-run.png) or hit **shift+F10**.<br />
